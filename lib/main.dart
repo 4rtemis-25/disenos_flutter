@@ -1,4 +1,5 @@
 import 'package:diseno_1/screens/primer_diseno.dart';
+import 'package:diseno_1/screens/segundo_diseno.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -11,9 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: 'primer_diseno',
+      initialRoute: 'segundo_diseno',
       routes: {
-        'primer_diseno': ( _ ) => const PrimerDisenoScreen()
+        'primer_diseno': ( _ ) => const PrimerDisenoScreen(),
+        'segundo_diseno': ( _ ) => const SegundoDisenoScreen()
       },
     );
   }

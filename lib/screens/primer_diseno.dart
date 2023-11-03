@@ -6,13 +6,18 @@ class PrimerDisenoScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          Image(image: AssetImage('assets/black-hole.jpg')),
-          _Title(),
+          const Image(image: AssetImage('assets/black-hole.jpg')),
+          const _Title(),
 
-          _ButtonSection()
+          const _ButtonSection(),
+
+          Container(
+            margin: const EdgeInsets.symmetric( horizontal: 20, vertical: 20 ),
+            child: const Text('Occaecat dolore adipisicing velit velit eu excepteur elit sunt cupidatat. Voluptate veniam aliquip magna cupidatat amet culpa elit. Elit ad et occaecat laboris quis mollit amet duis sint quis cupidatat est nisi quis. Non duis enim incididunt nulla ea sunt eu laborum ea esse veniam incididunt. Exercitation aliqua officia cupidatat elit anim nisi quis sit irure sunt.'),
+          )
         ],
         //  child: Image(image: AssetImage('assets/black-hole.jpg'))
       ),
@@ -52,18 +57,35 @@ class _ButtonSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _CustomButton(icon: Icons.call, text: 'Call',),
+          _CustomButton(icon: Icons.location_on_sharp, text: 'Route',),
+          _CustomButton(icon: Icons.share, text: 'Share',),
+        ],
+      ),
+    );
+  }
+}
+
+class _CustomButton extends StatelessWidget {
+
+  final IconData icon;
+  final String text;
+
+  const _CustomButton({
+    required this.icon, required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
       children: [
-        Column(
-          children: [
-            Icon(Icons.call)
-          ],
-        ),
-        Column(
-          children: [
-            Text('CALL')
-          ],
-        )
+        Icon(icon , color: Colors.blue, size: 30,),
+        Text(text, style: const TextStyle( color: Colors.blue ),)
       ],
     );
   }
