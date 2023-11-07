@@ -14,7 +14,7 @@ class Background extends StatelessWidget {
       ],
           colors: [
         Color.fromARGB(255, 255, 29, 51),
-        Color.fromARGB(255, 93, 19, 26),
+        Color.fromARGB(255, 154, 17, 31),
       ]));
 
   @override
